@@ -507,6 +507,7 @@ get_status_led() {
 		status_led="tp-link:orange:diag"
 		;;
 	tl-wdr6500-v2|\
+	tl-wdr5800-v1|\
 	tl-wdr6500-v6)
 		status_led="tp-link:white:system"
 		;;
