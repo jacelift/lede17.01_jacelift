@@ -1,3 +1,25 @@
+created_at: 2022-01-28T09:37:41Z
+=
+```
+https://api.github.com/repos/jacelift/lede17.01_jacelift
+  "updated_at": "2022-01-28T09:39:01Z",
+  "pushed_at": "2022-01-28T09:40:10Z",
+```
+
+【changelog】
+=
+```
+2022.1.26
+  1、解决git.openwrt.org无法访问问题
+  #src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07
+  src-git routing https://github.com/openwrt/routing.git;openwrt-19.07
+  
+2022.1.8
+  新增机型 TL-WDR5800-V1
+```
+
+
+
 欢迎来到Lean的Openwrt源码仓库！
 =
 Welcome to Lean's  git source of OpenWrt and packages
