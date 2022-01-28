@@ -913,6 +913,7 @@ tl-wr885n-v1)
 	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x02"
 	;;
 tl-wdr6500-v2|\
+tl-wdr5800-v1|\
 tl-wdr6500-v6|\
 tl-wr741nd)
 	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
