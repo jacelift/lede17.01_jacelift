@@ -14,8 +14,7 @@ https://api.github.com/repos/jacelift/lede17.01_jacelift
   #src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07
   src-git routing https://github.com/openwrt/routing.git;openwrt-19.07
   
-2022.1.8
-  新增机型 TL-WDR5800-V1
+  2.新增机型 TL-WDR5800-V1
 ```
 
 
