@@ -231,6 +231,7 @@ obj-$(CONFIG_ATH79_MACH_TL_WDR3320_V2)		+= mach-tl-wdr3320-v2.o
 obj-$(CONFIG_ATH79_MACH_TL_WDR3500)		+= mach-tl-wdr3500.o
 obj-$(CONFIG_ATH79_MACH_TL_WDR4300)		+= mach-tl-wdr4300.o
 obj-$(CONFIG_ATH79_MACH_TL_WDR6500_V2)		+= mach-tl-wdr6500-v2.o
+obj-$(CONFIG_ATH79_MACH_TL_WDR5800_V1)		+= mach-tl-wdr5800-v1.o
 obj-$(CONFIG_ATH79_MACH_TL_WDR6500_V6)		+= mach-tl-wdr6500-v6.o
 obj-$(CONFIG_ATH79_MACH_TL_WDR8500_V1)		+= mach-tl-wdr8500-v1.o
 obj-$(CONFIG_ATH79_MACH_TL_WPA8630)		+= mach-tl-wpa8630.o
