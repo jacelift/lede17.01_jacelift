@@ -444,6 +444,16 @@ define Device/tl-wr740n-v5
 endef
 TARGET_DEVICES += tl-wr740n-v5
 
+define Device/tl-wr740n-v5
+  $(Device/tplink-16mlzma)
+  DEVICE_TITLE := TP-LINK TL-WR740N v5 (16MB)
+  BOARDNAME := TL-WR710N
+  DEVICE_PROFILE := TLWR710
+  TPLINK_HWID := 0x07100001
+  CONSOLE := ttyATH0,115200
+endef
+TARGET_DEVICES += tl-wr740n-v5
+
 define Device/tl-wr740n-v6
   $(Device/tplink-8mlzma)
   DEVICE_TITLE := TP-LINK TL-WR740N/ND v6
