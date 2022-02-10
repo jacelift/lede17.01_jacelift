@@ -9,7 +9,29 @@ https://api.github.com/repos/jacelift/lede17.01_jacelift
 【changelog】
 =
 ```
-2022.1.28
+【2022.2.10】
+  添加tl-wr740n-v5机型支持
+  （target/linux/ar71xx/image/tiny-tp-link.mk）添加：
+define Device/tl-wr740n-v5
+  $(Device/tplink-16mlzma)
+  DEVICE_TITLE := TP-LINK TL-WR740N v5 (16MB)
+  BOARDNAME := TL-WR710N
+  DEVICE_PROFILE := TLWR710
+  TPLINK_HWID := 0x07100001
+  CONSOLE := ttyATH0,115200
+endef
+TARGET_DEVICES += tl-wr740n-v5
+  
+  
+  注释掉原有tl-wr710n的信息（target/linux/ar71xx/base-files/etc/board.d/02_network）添加：
+  tl-wr710n)
+		ucidef_set_interfaces_lan_wan "eth1.1" "eth0"
+		ucidef_add_switch "switch0" \
+			"0@eth1" "1:lan:1" "2:lan:2" "3:lan:3" "4:lan:4"
+		;;
+  
+  
+【2022.1.28】
   1、解决git.openwrt.org无法访问问题
   #src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07
   src-git routing https://github.com/openwrt/routing.git;openwrt-19.07
