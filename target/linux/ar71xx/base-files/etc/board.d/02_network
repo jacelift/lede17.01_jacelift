@@ -175,7 +175,6 @@ ar71xx_setup_interfaces()
 	pb44|\
 	rb-951ui-2hnd|\
 	routerstation|\
-#	tl-wr710n|\
 	tl-wr720n-v3|\
 	tl-wr810n|\
 	tl-wr810n-v2|\
