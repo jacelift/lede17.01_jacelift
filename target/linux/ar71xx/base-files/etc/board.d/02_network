@@ -11,6 +11,11 @@ ar71xx_setup_interfaces()
 	local board="$1"
 
 	case "$board" in
+	tl-wdr5800-v1)
+		ucidef_set_interfaces_lan_wan "eth1.1" "eth0"
+		ucidef_add_switch "switch0" \
+			"0@eth1" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
+		;;
 	airgatewaypro)
 		ucidef_add_switch "switch0" \
 			"0@eth0" "4:lan" "5:wan"
@@ -365,7 +370,6 @@ ar71xx_setup_interfaces()
 	r6100|\
 	smart-300|\
 	tl-wdr6500-v2|\
-	tl-wdr5800-v1|\
 	tl-wdr6500-v6|\
 	tl-wr940n-v4|\
 	tl-wr940n-v6|\
