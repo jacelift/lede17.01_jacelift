@@ -10,11 +10,17 @@ https://api.github.com/repos/jacelift/lede17.01_jacelift
 =
 ```
 【2022.7.1】
-  解决编译报错问题：丢失依赖库libcap.so.2
-  package/network/utils/iproute2/Makefile：
-  1.Package/ip-full添加依赖+libcap
-  2.Package/tc添加依赖+libcap
-  【注意】编译时make menconfig中选中libcap
+  1.解决tl-wdr5800-v1编译报错问题：丢失依赖库libcap.so.2，package/network/utils/iproute2/Makefile：
+    1.1.Package/ip-full添加依赖+libcap
+    1.2.Package/tc添加依赖+libcap
+    【注意】编译时make menconfig中选中libcap
+  2.修正tl-wdr5800-v1的LAN口顺序，target/linux/ar71xx/base-files/etc/board.d/02_network：
+  tl-wdr5800-v1)
+		ucidef_set_interfaces_lan_wan "eth1.1" "eth0"
+		ucidef_add_switch "switch0" \
+			"0@eth1" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
+		;;
+
 
 【2022.2.11】
   添加tl-wr740n-v5机型支持（ar71xx-tiny-tl-wr740n-v5 16MB）:
