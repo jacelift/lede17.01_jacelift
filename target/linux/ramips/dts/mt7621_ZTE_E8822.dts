@@ -29,7 +29,7 @@
 		};
 
 		led_power:power {
-			label = "e8820v2:white:power";
+			label = "E8822:white:power";
             		gpios = <&gpio 31 GPIO_ACTIVE_LOW>;
 		};
 	};
