@@ -18,8 +18,8 @@ led_wlan="$(get_dt_led wlan)"
 
 case $board in
 ZTE,E8822)
-	ucidef_set_led_netdev"sys" "SYS_LED" "$boardname:white:sys""eth0" "tx rx"
-        ucidef_set_led_default"power" "POWER_LED" "$boardname:white:power""1"
+	ucidef_set_led_netdev "sys" "SYS_LED" "$boardname:white:sys" "eth0" "tx rx"
+	ucidef_set_led_default "power" "POWER_LED" "$boardname:white:power" "1" 
 	;;
 d-team,newifi-d2)
 	ucidef_set_led_switch "internet" "internet" "$boardname:amber:internet" "switch0" "0x10"
