@@ -194,9 +194,6 @@ ramips_setup_macs()
 	zbtlink,zbt-wg2626)
 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0xe000)" 1)
 		;;
-	ZTE,E8822)
-		wan_mac=$(mtd_get_mac_binary factory 0xe006)
-		;;
 	alfa-network,quad-e4g|\
 	asus,rt-ac57u|\
 	d-team,newifi-d2|\
