@@ -221,13 +221,12 @@ endef
 TARGET_DEVICES += dlink_dir-860l-b1
 
 define Device/ZTE_E8822
-  $(Device/dsa-migration)
   IMAGE_SIZE := 16064k
   DEVICE_VENDOR := ZTE
   DEVICE_MODEL := E8822
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb3 \
 	kmod-usb-ledtrig-usbport wpad-openssl
-endef 
+endef
 TARGET_DEVICES += ZTE_E8822
 
 define Device/d-team_newifi-d2
