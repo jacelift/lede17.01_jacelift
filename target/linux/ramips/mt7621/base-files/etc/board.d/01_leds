@@ -107,3 +107,4 @@ esac
 board_config_flush
 
 exit 0
+
