@@ -9,6 +9,10 @@ ramips_setup_interfaces()
 	local board="$1"
 
 	case $board in
+	ZTE,E8822)
+		ucidef_add_switch "switch0" \
+			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
+		;;
 	adslr,g7|\
 	afoundry,ew1200|\
 	d-team,pbr-m1|\
@@ -178,6 +182,9 @@ ramips_setup_macs()
 	local label_mac=""
 
 	case $board in
+	ZTE,E8822)
+		wan_mac=$(mtd_get_mac_binary factory 0xe006)
+		;;
 	adslr,g7)
 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0xe00c)" 1)
 		;;
