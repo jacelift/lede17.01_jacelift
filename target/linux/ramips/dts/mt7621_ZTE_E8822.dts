@@ -1,3 +1,5 @@
+/dts-v1/;
+
 #include "mt7621.dtsi"
 
 #include <dt-bindings/gpio/gpio.h>
@@ -5,13 +7,14 @@
 
 / {
 	compatible = "ZTE,E8822", "mediatek,mt7621-soc";
-	model = "ZTE E8822";
-	
+	model = "E8822";
+
 	aliases {
-		led-boot = &led_sys;
-		led-failsafe = &led_sys;
-		led-running = &led_sys;
-		led-upgrade = &led_sys;
+		led-boot = &led_power_blue;
+		led-failsafe = &led_power_blue;
+		led-running = &led_power_blue;
+		led-upgrade = &led_power_blue;
+		label-mac-device = &ethernet;
 	};
 
 	chosen {
@@ -52,7 +55,7 @@
 &spi0 {
 	status = "okay";
 
-	flash@0 {
+	m25p80@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
 		spi-max-frequency = <10000000>;
@@ -83,12 +86,11 @@
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x50000 0xfb0000>;
+				reg = <0x50000 0x1fb0000>;
 			};
 		};
 	};
 };
-
 
 &pcie {
 	status = "okay";
@@ -120,16 +122,13 @@
 	};
 };
 
-
 &ethernet {
 	mtd-mac-address = <&factory 0xe000>;
 };
 
-
 &state_default {
 	gpio {
-		groups = "i2c", "uart2", "uart3", "wdt";
-		function = "gpio";
+		ralink,group = "i2c", "jtag", "uart2", "uart3";
+		ralink,function = "gpio";
 	};
 };
-
