@@ -24,30 +24,68 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led_sys:sys {
-			label = "E8822:white:sys";
-			gpios = <&gpio 29 GPIO_ACTIVE_LOW>;
-		};	
+		power-amber {
+			label = "E8822:amber:power";
+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+		};
 
-		led_power:power {
-			label = "E8822:white:power";
-			gpios = <&gpio 31 GPIO_ACTIVE_LOW>;			
+		led_power_blue: power-blue {
+			label = "E8822:blue:power";
+			gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+		};
+
+		internet-amber {
+			label = "E8822:amber:internet";
+			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
+		};
+
+		internet-blue {
+			label = "E8822:blue:internet";
+			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+		};
+
+		wlan2g {
+			label = "E8822:blue:wlan2g";
+			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
+		};
+
+		wlan5g {
+			label = "E8822:blue:wlan5g";
+			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
+		};
+
+		usb {
+			label = "E8822:blue:usb";
+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+			trigger-sources = <&xhci_ehci_port1>, <&ehci_port2>;
+			linux,default-trigger = "usbport";
 		};
 	};
 
 	keys {
 		compatible = "gpio-keys";
-		
+
 		reset {
 			label = "reset";
-			gpios = <&gpio 18 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
 			linux,code = <KEY_RESTART>;
 		};
 
 		wps {
 			label = "wps";
-			gpios = <&gpio 24 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
 			linux,code = <KEY_WPS_BUTTON>;
+		};
+	};
+
+	gpio_export {
+		compatible = "gpio-export";
+		#size-cells = <0>;
+
+		power_usb3 {
+			gpio-export,name = "power_usb3";
+			gpio-export,output = <1>;
+			gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
 		};
 	};
 };
@@ -99,26 +137,15 @@
 &pcie0 {
 	mt76@0,0 {
 		reg = <0x0000 0 0 0 0>;
-		mediatek,mtd-eeprom = <&factory 0x0000>;
-
-		led {
-			led-active-low;
-		};
-
+		mediatek,mtd-eeprom = <&factory 0x8000>;
+		ieee80211-freq-limit = <5000000 6000000>;
 	};
 };
 
 &pcie1 {
 	mt76@0,0 {
 		reg = <0x0000 0 0 0 0>;
-		mediatek,mtd-eeprom = <&factory 0x8000>;
-		ieee80211-freq-limit = <5000000 6000000>;
-
-		led {
-			led-sources = <2>;
-			led-active-low;
-		};
-
+		mediatek,mtd-eeprom = <&factory 0x0000>;
 	};
 };
 
