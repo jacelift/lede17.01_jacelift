@@ -335,3 +335,4 @@ ramips_setup_macs $board
 board_config_flush
 
 exit 0
+
