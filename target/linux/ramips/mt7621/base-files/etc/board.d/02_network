@@ -11,7 +11,7 @@ ramips_setup_interfaces()
 	case $board in
 	ZTE,E8822)
 		ucidef_add_switch "switch0" \
-			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
+			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan:5" "6@eth0"
 		;;
 	adslr,g7|\
 	afoundry,ew1200|\
