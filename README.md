@@ -16,31 +16,31 @@ sfe与flowoffload是同一个，一个是旧版另一个是新版
 
 【2022.7.9】
 1.添加ZTE_E8822机型到lede17.01_By_YouHua_WR1200JS：
-【ZTE_E8822文件列表】
+ZTE_E8822文件列表;
 target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
 target/linux/ramips/dts/mt7621_ZTE_E8822.dts
 target/linux/ramips/image/mt7621.mk
 ==========================================
 
-【修改】
+修改:
 target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
 target/linux/ramips/image/mt7621.mk
 
-【新增】
+新增:
 target/linux/ramips/dts/mt7621_ZTE_E8822.dts
 ===========================================
 
 2.修正LAN与WAN互反及用d2的修正LAN顺序：
 target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-【原始】：
+原始：
 	ZTE,E8822)
 		ucidef_add_switch "switch0" \
 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
 		;;
 
-【修正LAN与WAN互反及用d2的修正LAN顺序】：
+修正LAN与WAN互反及用d2的修正LAN顺序：
 	ZTE,E8822)
 		ucidef_add_switch "switch0" \
 			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan:5" "6@eth0"
@@ -51,7 +51,7 @@ target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 1.解决tl-wdr5800-v1编译报错问题：丢失依赖库libcap.so.2，package/network/utils/iproute2/Makefile：
     1.1.Package/ip-full添加依赖+libcap
     1.2.Package/tc添加依赖+libcap
-    【注意】编译时make menconfig中选中libcap
+    注意:编译时make menconfig中选中libcap
 2.修正tl-wdr5800-v1的LAN口顺序，target/linux/ar71xx/base-files/etc/board.d/02_network：
   tl-wdr5800-v1)
 		ucidef_set_interfaces_lan_wan "eth1.1" "eth0"
