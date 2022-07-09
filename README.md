@@ -16,7 +16,7 @@ sfe与flowoffload是同一个，一个是旧版另一个是新版
 
 【2022.7.9】
 1.添加ZTE_E8822机型到lede17.01_By_YouHua_WR1200JS：
-ZTE_E8822文件列表;
+ZTE_E8822文件列表：
 target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
 target/linux/ramips/dts/mt7621_ZTE_E8822.dts
