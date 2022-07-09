@@ -9,6 +9,45 @@ https://api.github.com/repos/jacelift/lede17.01_jacelift
 【changelog】
 =
 ```
+【注意】：
+kmod-fs-antfs与ntfs-3g冲突，二选一，否则编译失败
+sfe与flowoffload是同一个，一个是旧版另一个是新版
+
+
+【2022.7.9】
+  1.添加ZTE_E8822机型到lede17.01_By_YouHua_WR1200JS：
+【ZTE_E8822文件列表】
+target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
+target/linux/ramips/dts/mt7621_ZTE_E8822.dts
+target/linux/ramips/image/mt7621.mk
+==========================================
+
+【修改】
+target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
+target/linux/ramips/image/mt7621.mk
+
+【新增】
+target/linux/ramips/dts/mt7621_ZTE_E8822.dts
+===========================================
+
+【修正LAN与WAN互反及用d2的修正LAN顺序】
+target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+【原始】：
+	ZTE,E8822)
+		ucidef_add_switch "switch0" \
+			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
+		;;
+
+【修正LAN与WAN互反及用d2的修正LAN顺序】：
+	ZTE,E8822)
+		ucidef_add_switch "switch0" \
+			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan:5" "6@eth0"
+		;;
+
+
+
 【2022.7.1】
   1.解决tl-wdr5800-v1编译报错问题：丢失依赖库libcap.so.2，package/network/utils/iproute2/Makefile：
     1.1.Package/ip-full添加依赖+libcap
