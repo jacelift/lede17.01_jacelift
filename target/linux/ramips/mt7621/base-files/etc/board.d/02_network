@@ -13,6 +13,10 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan:5" "6@eth0"
 		;;
+	RX,WT600)
+		ucidef_add_switch "switch0" \
+			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan:5" "6@eth0"
+		;;
 	adslr,g7|\
 	afoundry,ew1200|\
 	d-team,pbr-m1|\
@@ -183,6 +187,9 @@ ramips_setup_macs()
 
 	case $board in
 	ZTE,E8822)
+		wan_mac=$(mtd_get_mac_binary factory 0xe006)
+		;;
+	RX,WT600)
 		wan_mac=$(mtd_get_mac_binary factory 0xe006)
 		;;
 	adslr,g7)
