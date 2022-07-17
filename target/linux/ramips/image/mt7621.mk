@@ -984,6 +984,15 @@ define Device/ZTE_E8822
 endef
 TARGET_DEVICES += ZTE_E8822
 
+define Device/RX_WT600
+  IMAGE_SIZE := 32448k
+  DEVICE_VENDOR := RX
+  DEVICE_MODEL := WT600
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb2 kmod-usb3 \
+	kmod-usb-ledtrig-usbport wpad-openssl
+endef
+TARGET_DEVICES += RX_WT600
+
 define Device/youhua_wr1200js
   IMAGE_SIZE := 16064k
   DEVICE_VENDOR := YouHua
