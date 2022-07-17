@@ -20,6 +20,9 @@ case $board in
 ZTE,E8822)
 	ucidef_set_led_switch "internet" "INTERNET" "$boardname:green:wan" "switch0" "0x01"
 	;;
+RX,WT600)
+	ucidef_set_led_switch "internet" "INTERNET" "$boardname:green:wan" "switch0" "0x01"
+	;;
 d-team,newifi-d2)
 	ucidef_set_led_switch "internet" "internet" "$boardname:amber:internet" "switch0" "0x10"
 	ucidef_set_led_netdev "wlan2g" "WiFi 2.4GHz" "$boardname:blue:wlan2g" "wlan0"
