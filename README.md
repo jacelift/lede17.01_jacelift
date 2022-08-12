@@ -17,11 +17,11 @@ sfe与flowoffload是同一个，一个是旧版另一个是新版
 
 【2022.8.13】
 1.添加TL-AP300C-POE-V1机型到lede17.01_By_OMY-X1：
-【注意】固件的网口默认为LAN，当AP时：关闭dhcp服务即可；当路由时：互换LAN与WAN（含WAN6）的网络适配器eth1或eth0即可。
+注意：固件的网口默认为LAN，当AP时：关闭dhcp服务即可；当路由时：互换LAN与WAN（含WAN6）的网络适配器eth1或eth0即可。
        尽量使用本机型的ART文件，否则容易出现各种bug。
 grep -irl "OMY-X1" target/linux/*
 grep -irl "OMY_X1" target/linux/*
-【TL-AP300C-POE-V1文件列表：12】
+TL-AP300C-POE-V1文件列表：12
 target/linux/ar71xx/base-files/etc/diag.sh
 target/linux/ar71xx/base-files/etc/board.d/01_leds
 target/linux/ar71xx/base-files/lib/ar71xx.sh
@@ -37,7 +37,7 @@ target/linux/ar71xx/generic/config-default
 ==============================================
 
 其中
-【修改：11】
+修改：11
 target/linux/ar71xx/base-files/etc/diag.sh
 target/linux/ar71xx/base-files/etc/board.d/01_leds
 target/linux/ar71xx/base-files/lib/ar71xx.sh
@@ -49,7 +49,7 @@ target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
 target/linux/ar71xx/config-4.9
 target/linux/ar71xx/config-4.14
 target/linux/ar71xx/generic/config-default
-【新增：1】
+新增：1
 target/linux/ar71xx/files/arch/mips/ath79/mach-tl-ap300c-poe-v1.c
 
 
