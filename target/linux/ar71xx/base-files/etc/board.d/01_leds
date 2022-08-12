@@ -590,6 +590,10 @@ omy-g1)
 	ucidef_set_led_netdev "wan" "WAN" "omy:green:wan" "eth0"
 	ucidef_set_led_netdev "lan" "LAN" "omy:green:lan" "eth1"
 	;;
+tl-ap300c-poe-v1)
+	ucidef_set_led_default "power" "POWER" "omy:green:power" "1"
+	ucidef_set_led_default "wan" "WAN" "omy:green:wan" "eth0"
+	;;
 omy-x1)
 	ucidef_set_led_default "power" "POWER" "omy:green:power" "1"
 	ucidef_set_led_default "wan" "WAN" "omy:green:wan" "eth0"
