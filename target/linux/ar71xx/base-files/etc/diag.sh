@@ -341,6 +341,9 @@ get_status_led() {
 	omy-g1)
 		status_led="omy:green:wlan"
 		;;
+	tl-ap300c-poe-v1)
+		status_led="omy:green:power"
+		;;
 	omy-x1)
 		status_led="omy:green:power"
 		;;
