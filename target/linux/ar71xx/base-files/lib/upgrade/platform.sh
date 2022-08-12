@@ -418,6 +418,7 @@ platform_check_image() {
 	mc-mw4530r | \
 	minibox-v1|\
 	omy-g1|\
+	tl-ap300c-poe-v1|\
 	omy-x1|\
 	onion-omega|\
 	oolite-v1|\
