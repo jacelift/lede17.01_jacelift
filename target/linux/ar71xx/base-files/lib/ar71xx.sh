@@ -196,6 +196,9 @@ tplink_board_detect() {
 	"066601"*)
 		model="OMYlink OMY-G1"
 		;;
+	"300001"*)
+		model="TP-LINK TL-AP300C-POE-V1"
+		;;
 	"066602"*)
 		model="OMYlink OMY-X1"
 		;;
@@ -954,6 +957,9 @@ ar71xx_board_detect() {
 		;;
 	*"OMY-G1")
 		name="omy-g1"
+		;;
+	*"TL-AP300C-POE-V1")
+		name="tl-ap300c-poe-v1"
 		;;
 	*"OMY-X1")
 		name="omy-x1"
