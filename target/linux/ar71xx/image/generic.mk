@@ -948,6 +948,15 @@ define Device/omy-g1
 endef
 TARGET_DEVICES += omy-g1
 
+define Device/tl-ap300c-poe-v1
+  $(Device/tplink-8mlzma)
+  DEVICE_TITLE := TP-LINK TL-AP300C-POE-V1(8MB)
+  BOARDNAME := TL-AP300C-POE-V1
+  DEVICE_PROFILE := TL-AP300C-POE-V1
+  TPLINK_HWID := 0x30000101
+endef
+TARGET_DEVICES += tl-ap300c-poe-v1
+
 define Device/omy-x1
   $(Device/tplink-8mlzma)
   DEVICE_TITLE := OMYlink OMY-X1
